@@ -3,31 +3,31 @@
 [![Latest Stable Version](https://poser.pugx.org/barryvdh/laravel-debugbar/version.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
 [![Total Downloads](https://poser.pugx.org/barryvdh/laravel-debugbar/d/total.png)](https://packagist.org/packages/barryvdh/laravel-debugbar)
 
-### Note for v3: Debugbar is now enabled by requiring the package, but still needs APP_DEBUG=true by default!
+### Lưu ý cho v3: Debugbar bây giờ được kích hoạt bằng cách yêu cầu gói, nhưng vẫn cần APP_DEBUG = true như thường!
 
-### For Laravel < 5.5, please use the [2.4 branch](https://github.com/barryvdh/laravel-debugbar/tree/2.4)!
+### Đối với Laravel < 5.5, vui lòng sử dụng [2.4 branch](https://github.com/barryvdh/laravel-debugbar/tree/2.4)!
 
-This is a package to integrate [PHP Debug Bar](http://phpdebugbar.com/) with Laravel 5.
-It includes a ServiceProvider to register the debugbar and attach it to the output. You can publish assets and configure it through Laravel.
+Đây là một gói đẻ tích hợp [PHP Debug Bar](http://phpdebugbar.com/) với Laravel 5.
+Nó bao gồm một ServiceProvider để đăng kí debugbar và đính kèm nó tới đầu ra. Bạn có thể công bố assets và cấu hình nó thông qua Laravel.
 It bootstraps some Collectors to work with Laravel and implements a couple custom DataCollectors, specific for Laravel.
-It is configured to display Redirects and (jQuery) Ajax Requests. (Shown in a dropdown)
-Read [the documentation](http://phpdebugbar.com/docs/) for more configuration options.
+Nó được cấu hình để hiển thị các yêu cầu Redirects và (jQuery) Ajax. (Hiển thị trong một dropdown)
+Đọc [the documentation](http://phpdebugbar.com/docs/) để biết thêm các tuỳ chọn cấu hình.
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/973269/4270452/740c8c8c-3ccb-11e4-8d9a-5a9e64f19351.png)
 
-Note: Use the DebugBar only in development. It can slow the application down (because it has to gather data). So when experiencing slowness, try disabling some of the collectors.
+Lưu ý: Chỉ sử dụng DebugBar trong khi phát triển. Nó có thể làm chậm application (bởi vì nó phải thu thập dữ liệu). Vì vậy, khi gặp tình trạng chậm, thử vô hiệu hoá một vài collectors.
 
-This package includes some custom collectors:
- - QueryCollector: Show all queries, including binding + timing
- - RouteCollector: Show information about the current Route.
- - ViewCollector: Show the currently loaded views. (Optionally: display the shared data)
- - EventsCollector: Show all events
- - LaravelCollector: Show the Laravel version and Environment. (disabled by default)
- - SymfonyRequestCollector: replaces the RequestCollector with more information about the request/response
- - LogsCollector: Show the latest log entries from the storage logs. (disabled by default)
- - FilesCollector: Show the files that are included/required by PHP. (disabled by default)
- - ConfigCollector: Display the values from the config files. (disabled by default)
- - CacheCollector: Display all cache events. (disabled by default)
+Gói này bao gồm một vài collectors tuỳ chọn:
+ - QueryCollector: Hiện tất cả các truy vấn, bao gồm cả binding + timing
+ - RouteCollector: Hiện thông tin về Route hiện tại.
+ - ViewCollector: Hiện các view hiện được tải. (Tuỳ chọn: hiện dữ liệu được chia sẻ)
+ - EventsCollector: Hiện tất cả các sự kiện
+ - LaravelCollector:Hiện phiên bản vả môi trường Laravel. (Mặc định là vô hiệu)
+ - SymfonyRequestCollector: Thay thế cho RequestCollector với nhiều thông tin hơn về request/response
+ - LogsCollector:Hiện mục nhật kí mới nhất từ các nhật kí lưu trữ. (Mặc định là vô hiệu)
+ - FilesCollector: Hiện các tệp được included/required bởi PHP. (Mặc định là vô hiệu)
+ - ConfigCollector: Hiện các giá trị từ các tệp config. (Mặc định là vô hiệu)
+ - CacheCollector: Hiển thị toàn bộ những sự kiện bộ nhớ đệm. (Mặc định là vô hiệu)
 
 Bootstraps the following collectors for Laravel:
  - LogCollector: Show all Log messages
